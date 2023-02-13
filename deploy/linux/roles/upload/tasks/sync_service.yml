@@ -1,10 +1,9 @@
 ---
-
 - name: "Create {{ service_id }} directory"
   file:
     path: ~/{{ service_id }}
     state: directory
 
-- ansible.posix.synchronize:
+- synchronize:
     dest: ~/{{ service_id }}
     src: ../../../../../python/

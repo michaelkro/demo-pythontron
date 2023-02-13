@@ -1,5 +1,4 @@
 ---
-
 - name: defaulting delay_start_ms
   set_fact:
     delay_start_ms: 0
@@ -10,7 +9,7 @@
     path: "{{ deployment_path }}/{{ service_id }}/python"
     state: directory
 
-- ansible.posix.synchronize:
+- synchronize:
     src: "{{ role_path }}/../../../../python"
     dest: "{{ deployment_path }}/{{ service_id }}"
 
